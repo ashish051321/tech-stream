@@ -4,10 +4,11 @@ import { AppComponent } from './app.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { HomeComponent } from './home/home.component';
 
+
 const routes: Routes = [
   { path: '', component: AppComponent },
   {
-    path: 'blog-form',
+    path: 'create-post',
     loadChildren: () => import('./create-post/create-post.module').then(m => m.CreatePostModule)
   },
   { path: '**', component: PageNotFoundComponent }

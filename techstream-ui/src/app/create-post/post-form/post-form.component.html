@@ -1,1 +1,35 @@
-<p>post-form works!</p>
+<div class="toolbar" role="banner">
+  <img width="40" alt="Angular Logo"
+    src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==" />
+  <span>New Post for Tech Stream</span>
+  <div class="spacer"></div>
+
+</div>
+<form #myForm="ngForm" class="form-container">
+  <mat-form-field appearance="fill">
+    <mat-label>Title</mat-label>
+    <input matInput name="title" [(ngModel)]="formData.title">
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Post</mat-label>
+    <textarea id="postTextArea" matInput name="post" [(ngModel)]="formData.post"></textarea>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Category</mat-label>
+    <mat-select name="category" [(ngModel)]="formData.category">
+      <mat-option value="" disabled>Select category</mat-option>
+      <mat-option value="Java">Java</mat-option>
+      <mat-option value="Database">Database</mat-option>
+      <mat-option value="Frontend-html-css-js">Frontend-html-css-js</mat-option>
+      <mat-option value="Frontend-angular">Frontend-angular</mat-option>
+      <mat-option value="System Design">System Design</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <div class="button-group">
+    <button mat-raised-button color="primary" type="submit">Submit</button>
+    <button mat-raised-button color="warn" type="button" (click)="myForm.reset()">Reset</button>
+  </div>
+</form>
