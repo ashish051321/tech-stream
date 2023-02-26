@@ -25,7 +25,11 @@ export class PostComponent implements OnInit {
   }
 
   createPost() {
-    this.postService.createPost(this.formData).subscribe();
+    this.postService.createPost(this.formData).subscribe(
+      (data: any) => {
+        console.log("Operation was successful with return values as ", data);
+      }
+    );
   }
 
 }
