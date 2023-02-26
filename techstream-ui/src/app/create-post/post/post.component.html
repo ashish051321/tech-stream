@@ -5,28 +5,31 @@
 <form #myForm="ngForm" class="form-container" style="z-index:998">
   <mat-form-field appearance="fill">
     <mat-label>Title</mat-label>
-    <input matInput name="title" [(ngModel)]="formData.title">
+    <input matInput name="title" [(ngModel)]="formData.ts_title">
   </mat-form-field>
 
   <mat-form-field appearance="fill">
-    <mat-label>Post</mat-label>
-    <textarea id="postTextArea" matInput name="post" [(ngModel)]="formData.post"></textarea>
+    <mat-label>Description</mat-label>
+    <textarea id="postTextArea" matInput name="post" [(ngModel)]="formData.ts_text"></textarea>
   </mat-form-field>
 
   <mat-form-field appearance="fill">
     <mat-label>Category</mat-label>
-    <mat-select name="category" [(ngModel)]="formData.category">
+    <mat-select name="category" [(ngModel)]="formData.ts_category">
       <mat-option value="" disabled>Select category</mat-option>
       <mat-option value="Java">Java</mat-option>
       <mat-option value="Database">Database</mat-option>
+      <mat-option value="Data Structures and Algorithms">Data Structures and Algorithms</mat-option>
       <mat-option value="Frontend-html-css-js">Frontend-html-css-js</mat-option>
       <mat-option value="Frontend-angular">Frontend-angular</mat-option>
       <mat-option value="System Design">System Design</mat-option>
+      <mat-option value="Cloud">Cloud</mat-option>
+      <mat-option value="General Computer Science">General Computer Science</mat-option>
     </mat-select>
   </mat-form-field>
 
   <div class="button-group">
-    <button mat-raised-button color="primary" type="submit">Submit</button>
+    <button mat-raised-button color="primary" type="submit" (click)="createPost()">Submit</button>
     <button mat-raised-button color="warn" type="button" (click)="myForm.reset()">Reset</button>
   </div>
 </form>

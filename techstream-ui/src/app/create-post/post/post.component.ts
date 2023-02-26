@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { PostService } from './post.service';
 
 @Component({
   selector: 'app-post',
@@ -7,20 +8,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PostComponent implements OnInit {
 
-  constructor() { }
+  constructor(private postService: PostService) { }
 
   formData = {
-    title: '',
-    post: '',
-    category: ''
+    ts_title: '',
+    ts_text: '',
+    ts_category: ''
   };
 
-  onSubmit() {
-    console.log(this.formData);
-    // Add your code to submit the form data to the server here
-  }
+  // onSubmit() {
+  //   console.log(this.formData);
+  //   // Add your code to submit the form data to the server here
+  // }
 
   ngOnInit(): void {
+  }
+
+  createPost() {
+    this.postService.createPost(this.formData).subscribe();
   }
 
 }
