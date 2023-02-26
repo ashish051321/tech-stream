@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { PostFormComponent } from './post-form/post-form.component';
+import { PostComponent } from './post/post.component';
 import { CreatePostRoutingModule } from './create-post-routing.module';
 
 import { FormsModule } from '@angular/forms';
@@ -15,7 +15,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations'; 
 
 @NgModule({
   declarations: [
-    PostFormComponent
+    PostComponent
   ],
   imports: [
     CommonModule,
